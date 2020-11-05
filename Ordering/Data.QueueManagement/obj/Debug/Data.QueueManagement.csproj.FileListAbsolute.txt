@@ -1,0 +1,5 @@
+D:\bekari\__code\C#\ordersupplies\Ordering\Data.QueueManagement\bin\Debug\Data.QueueManagement.dll
+D:\bekari\__code\C#\ordersupplies\Ordering\Data.QueueManagement\bin\Debug\Data.QueueManagement.pdb
+D:\bekari\__code\C#\ordersupplies\Ordering\Data.QueueManagement\obj\Debug\Data.QueueManagement.csproj.CoreCompileInputs.cache
+D:\bekari\__code\C#\ordersupplies\Ordering\Data.QueueManagement\obj\Debug\Data.QueueManagement.dll
+D:\bekari\__code\C#\ordersupplies\Ordering\Data.QueueManagement\obj\Debug\Data.QueueManagement.pdb

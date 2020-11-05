@@ -1,0 +1,6 @@
+D:\bekari\__code\C#\ordersupplies\Ordering\Interfaces\bin\Debug\Interfaces.dll
+D:\bekari\__code\C#\ordersupplies\Ordering\Interfaces\bin\Debug\Interfaces.pdb
+D:\bekari\__code\C#\ordersupplies\Ordering\Interfaces\obj\Debug\Interfaces.csprojAssemblyReference.cache
+D:\bekari\__code\C#\ordersupplies\Ordering\Interfaces\obj\Debug\Interfaces.csproj.CoreCompileInputs.cache
+D:\bekari\__code\C#\ordersupplies\Ordering\Interfaces\obj\Debug\Interfaces.dll
+D:\bekari\__code\C#\ordersupplies\Ordering\Interfaces\obj\Debug\Interfaces.pdb
