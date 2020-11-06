@@ -3472,23 +3472,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bekarim\\.nuget\\packages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\rayya\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\bekari\\__code\\C#\\ordersupplies\\Ordering\\UnitTests\\UnitTests.csproj",
+      "projectUniqueName": "C:\\Users\\rayya\\cstp2104\\ordersupplies\\Ordering\\UnitTests\\UnitTests.csproj",
       "projectName": "UnitTests",
-      "projectPath": "D:\\bekari\\__code\\C#\\ordersupplies\\Ordering\\UnitTests\\UnitTests.csproj",
-      "packagesPath": "C:\\Users\\bekarim\\.nuget\\packages",
-      "outputPath": "D:\\bekari\\__code\\C#\\ordersupplies\\Ordering\\UnitTests\\obj\\",
+      "projectPath": "C:\\Users\\rayya\\cstp2104\\ordersupplies\\Ordering\\UnitTests\\UnitTests.csproj",
+      "packagesPath": "C:\\Users\\rayya\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rayya\\cstp2104\\ordersupplies\\Ordering\\UnitTests\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\bekarim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rayya\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
