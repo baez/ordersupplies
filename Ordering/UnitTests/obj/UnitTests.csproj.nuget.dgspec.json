@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\bekari\\__code\\C#\\ordersupplies\\Ordering\\UnitTests\\UnitTests.csproj": {}
+    "C:\\Users\\maryn\\OneDrive - Vancouver Community College\\Term 04\\2104\\OrderSupplies\\ordersupplies\\Ordering\\UnitTests\\UnitTests.csproj": {}
   },
   "projects": {
-    "D:\\bekari\\__code\\C#\\ordersupplies\\Ordering\\UnitTests\\UnitTests.csproj": {
+    "C:\\Users\\maryn\\OneDrive - Vancouver Community College\\Term 04\\2104\\OrderSupplies\\ordersupplies\\Ordering\\UnitTests\\UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\bekari\\__code\\C#\\ordersupplies\\Ordering\\UnitTests\\UnitTests.csproj",
+        "projectUniqueName": "C:\\Users\\maryn\\OneDrive - Vancouver Community College\\Term 04\\2104\\OrderSupplies\\ordersupplies\\Ordering\\UnitTests\\UnitTests.csproj",
         "projectName": "UnitTests",
-        "projectPath": "D:\\bekari\\__code\\C#\\ordersupplies\\Ordering\\UnitTests\\UnitTests.csproj",
-        "packagesPath": "C:\\Users\\bekarim\\.nuget\\packages",
-        "outputPath": "D:\\bekari\\__code\\C#\\ordersupplies\\Ordering\\UnitTests\\obj\\",
+        "projectPath": "C:\\Users\\maryn\\OneDrive - Vancouver Community College\\Term 04\\2104\\OrderSupplies\\ordersupplies\\Ordering\\UnitTests\\UnitTests.csproj",
+        "packagesPath": "C:\\Users\\maryn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maryn\\OneDrive - Vancouver Community College\\Term 04\\2104\\OrderSupplies\\ordersupplies\\Ordering\\UnitTests\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\bekarim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maryn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
