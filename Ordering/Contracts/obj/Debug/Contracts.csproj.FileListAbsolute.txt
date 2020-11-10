@@ -1,5 +1,0 @@
-D:\bekari\__code\C#\ordersupplies\Ordering\Contracts\bin\Debug\Contracts.dll
-D:\bekari\__code\C#\ordersupplies\Ordering\Contracts\bin\Debug\Contracts.pdb
-D:\bekari\__code\C#\ordersupplies\Ordering\Contracts\obj\Debug\Contracts.csproj.CoreCompileInputs.cache
-D:\bekari\__code\C#\ordersupplies\Ordering\Contracts\obj\Debug\Contracts.dll
-D:\bekari\__code\C#\ordersupplies\Ordering\Contracts\obj\Debug\Contracts.pdb

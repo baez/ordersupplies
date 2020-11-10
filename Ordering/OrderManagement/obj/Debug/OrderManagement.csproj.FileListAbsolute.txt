@@ -1,5 +1,0 @@
-D:\bekari\__code\C#\ordersupplies\Ordering\OrderManagement\bin\Debug\OrderManagement.dll
-D:\bekari\__code\C#\ordersupplies\Ordering\OrderManagement\bin\Debug\OrderManagement.pdb
-D:\bekari\__code\C#\ordersupplies\Ordering\OrderManagement\obj\Debug\OrderManagement.csproj.CoreCompileInputs.cache
-D:\bekari\__code\C#\ordersupplies\Ordering\OrderManagement\obj\Debug\OrderManagement.dll
-D:\bekari\__code\C#\ordersupplies\Ordering\OrderManagement\obj\Debug\OrderManagement.pdb

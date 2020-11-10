@@ -1,6 +1,0 @@
-D:\bekari\__code\C#\ordersupplies\Ordering\ProcessManagement\bin\Debug\ProcessManagement.dll
-D:\bekari\__code\C#\ordersupplies\Ordering\ProcessManagement\bin\Debug\ProcessManagement.pdb
-D:\bekari\__code\C#\ordersupplies\Ordering\ProcessManagement\obj\Debug\ProcessManagement.csprojAssemblyReference.cache
-D:\bekari\__code\C#\ordersupplies\Ordering\ProcessManagement\obj\Debug\ProcessManagement.csproj.CoreCompileInputs.cache
-D:\bekari\__code\C#\ordersupplies\Ordering\ProcessManagement\obj\Debug\ProcessManagement.dll
-D:\bekari\__code\C#\ordersupplies\Ordering\ProcessManagement\obj\Debug\ProcessManagement.pdb

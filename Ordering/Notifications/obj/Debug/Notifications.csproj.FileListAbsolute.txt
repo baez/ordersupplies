@@ -1,5 +1,0 @@
-D:\bekari\__code\C#\ordersupplies\Ordering\Notifications\bin\Debug\Notifications.dll
-D:\bekari\__code\C#\ordersupplies\Ordering\Notifications\bin\Debug\Notifications.pdb
-D:\bekari\__code\C#\ordersupplies\Ordering\Notifications\obj\Debug\Notifications.csproj.CoreCompileInputs.cache
-D:\bekari\__code\C#\ordersupplies\Ordering\Notifications\obj\Debug\Notifications.dll
-D:\bekari\__code\C#\ordersupplies\Ordering\Notifications\obj\Debug\Notifications.pdb
