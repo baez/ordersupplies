@@ -26,7 +26,7 @@ namespace Contracts
         }
         public override string ToString()
         {
-            return $"Item: {this.Name} Description: {this.ItemDescription} Price:{this.Price}";
+            return $"Item: {this.Name}, Description: {this.ItemDescription}, Price:{this.Price}, Category:{this.Category}, Last Ordered Date: {this.DateLastOrdered} ";
         }
     }
 }
