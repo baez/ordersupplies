@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Ordering.BusinessLogic.OrderManagement
 {
-    class OrderFramework:IOrderManager
+    class OrderManager:IOrderManager
     {
         public SortedList<Object, int> newOrder = new SortedList<object, int>();
 
