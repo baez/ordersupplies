@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProcessManagement
 {
-    public class OrderProcess
-    { 
-        /*
-         * approve/deny order
-         * 
-         */
+    public interface IOrderProcess<T>
+    {
+        List<IOrderStep<T>> Steps { get; set; }
+
+        IOrderStep<T> CurrentStep { get; set; }
+
     }
 }
