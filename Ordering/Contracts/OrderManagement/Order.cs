@@ -24,15 +24,14 @@ namespace Contracts.OrderManagement
             OrderList = new SortedList<OrderItem, int>();
 
             //Here we make sure the username isn't Null
-            try
+            if (UserName == null)
             {
-                if (UserName == null)
-                {
-                    throw new System.ArgumentException("Username cannot be null, no order created");
-                }
-            } catch(Exception e)
+                throw new System.ArgumentException("Username cannot be null, no order created");
+            }
+
+            if (OrderNumber <= 0)
             {
-                Console.WriteLine(e.Message);
+                throw new System.ArgumentException("Order Number must be greater than 0, no order created");
             }
 
         }
