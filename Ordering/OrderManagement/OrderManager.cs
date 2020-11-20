@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Contracts.OrderManagement;
-
+using Interfaces;
 
 
 namespace Ordering.BusinessLogic.OrderManagement
 {
-    public class OrderManager:IOrderManager
+    public class OrderManager: IOrderManager
     {
         public int OrderNumber { get; set; }
         public string UserName { get; set; }
@@ -26,13 +26,13 @@ namespace Ordering.BusinessLogic.OrderManagement
         //public SortedList<Object, int> newOrder = new SortedList<Object, int>();
         
 
-        public void AddItem(OrderItem Item, int Quantity)
+        public void AddItem(IOrderItem item, int Quantity)
         {
-            OrderItem toAdd = Item;
+            var toAdd = item;
             bool found = false;
             int newQuantity = 0;
             int index = 0;
-            foreach (KeyValuePair<OrderItem, int> KVP in NewOrder.OrderList)
+            foreach (KeyValuePair<IOrderItem, int> KVP in NewOrder.OrderList)
             {
                 if (KVP.Key == toAdd)
                 {
@@ -45,16 +45,16 @@ namespace Ordering.BusinessLogic.OrderManagement
             }
             if (found == false)
             {
-                NewOrder.OrderList.Add(Item, Quantity);
+                NewOrder.OrderList.Add(item, Quantity);
             }
             else
             {
                 NewOrder.OrderList.RemoveAt(index);
-                NewOrder.OrderList.Add(Item, newQuantity);
+                NewOrder.OrderList.Add(item, newQuantity);
             }
         }
 
-        public void RemoveItem(OrderItem Item)
+        public void RemoveItem(IOrderItem Item)
         {
             NewOrder.OrderList.Remove(Item);
         }
@@ -63,7 +63,7 @@ namespace Ordering.BusinessLogic.OrderManagement
         {
             Console.WriteLine("Here is your current order:");
 
-            foreach (KeyValuePair<OrderItem, int> KVP in NewOrder.OrderList)
+            foreach (KeyValuePair<IOrderItem, int> KVP in NewOrder.OrderList)
             {
                 Console.WriteLine($"The order currently has {KVP.Value} units of {KVP.Key}");
             }

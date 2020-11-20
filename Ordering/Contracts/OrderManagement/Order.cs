@@ -13,7 +13,7 @@ namespace Contracts.OrderManagement
         public double TotalCost { get; set; }
         public DateTime DateOrdered { get; set; }
 
-        public SortedList<OrderItem, int> OrderList;
+        public SortedList<IOrderItem, int> OrderList;
 
         public Order(int orderNumber, string userName)
         {
@@ -21,7 +21,7 @@ namespace Contracts.OrderManagement
             UserName = userName;
             TotalCost = 0.00;
             DateOrdered = DateTime.Now;
-            OrderList = new SortedList<OrderItem, int>();
+            OrderList = new SortedList<IOrderItem, int>();
 
             //Here we make sure the username isn't Null
             if (UserName == null)
