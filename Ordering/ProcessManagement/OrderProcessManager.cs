@@ -15,9 +15,9 @@ namespace ProcessManagement
      *    OrderPlacement --> OrderReview --> Purchasing --> Complete
      * */
 
-    public class ProcessManager : IProcessManager
+    public class OrderProcessManager : IOrderProcessManager
     {
-        public void MoveToNextStep(IOrder order)
+        public void MoveToNextStep(IOrderProcess order)
         {
             
         }

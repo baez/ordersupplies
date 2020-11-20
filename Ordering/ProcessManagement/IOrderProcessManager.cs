@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace ProcessManagement
 {
-    public interface IProcessManager
+    public interface IOrderProcessManager
     {
-        void MoveToNextStep(IOrder order);
+        void MoveToNextStep(IOrderProcess orderProcess);
     }
 }
