@@ -41,9 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IProcessManager.cs" />
     <Compile Include="Process.cs" />
-    <Compile Include="ProcessManager.cs" />
     <Compile Include="IOrderProcessManager.cs" />
     <Compile Include="OrderProcessManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

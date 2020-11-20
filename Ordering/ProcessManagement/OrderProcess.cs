@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProcessManagement
 {
-    public class Process
+    public class OrderProcess
     { 
         /*
          * approve/deny order
