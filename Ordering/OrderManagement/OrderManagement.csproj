@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Contracts\Contracts.csproj">
+      <Project>{016b3e9a-d8bb-4cbf-885c-daf7510fa5ac}</Project>
+      <Name>Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{d9349263-3fb3-480c-8232-ecca079d43c5}</Project>
       <Name>Interfaces</Name>

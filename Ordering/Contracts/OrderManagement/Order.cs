@@ -1,16 +1,19 @@
 using System;
 using System.Collections.Generic;
+using Contracts;
+using Interfaces;
 
 
 namespace Contracts.OrderManagement
 {
     public class Order
     {
-        public int OrderNumber;
-        public string UserName;
-        public double TotalCost;
-        public DateTime DateOrdered;
-        public SortedList<Object, int> NewOrder;
+        public int OrderNumber { get; set; }
+        public string UserName { get; set; }
+        public double TotalCost { get; set; }
+        public DateTime DateOrdered { get; set; }
+
+        public SortedList<OrderItem, int> OrderList;
 
         public Order(int orderNumber, string userName)
         {
@@ -18,10 +21,21 @@ namespace Contracts.OrderManagement
             UserName = userName;
             TotalCost = 0.00;
             DateOrdered = DateTime.Now;
-            NewOrder = new SortedList<object, int>();
-        }
+            OrderList = new SortedList<OrderItem, int>();
 
-        //Need to test order, and modify order framework to make sure it integrates
+            //Here we make sure the username isn't Null
+            try
+            {
+                if (UserName == null)
+                {
+                    throw new System.ArgumentException("Username cannot be null, no order created");
+                }
+            } catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+        }
 
     }
 }
