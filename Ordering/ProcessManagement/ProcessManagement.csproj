@@ -41,9 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="IProcessManager.cs" />
     <Compile Include="Process.cs" />
     <Compile Include="ProcessManager.cs" />
+=======
+    <Compile Include="IOrderProcessManager.cs" />
+    <Compile Include="OrderProcessManager.cs" />
+>>>>>>> 82726b0a5f4f007df998d4fd3e05ae299c0b5ec3
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
