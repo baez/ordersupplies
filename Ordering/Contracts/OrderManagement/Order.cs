@@ -6,7 +6,7 @@ using Interfaces;
 
 namespace Contracts.OrderManagement
 {
-    public class Order
+    public class Order : IOrder
     {
         public int OrderNumber { get; set; }
         public string UserName { get; set; }
@@ -36,5 +36,9 @@ namespace Contracts.OrderManagement
 
         }
 
+        void IOrder.Order(int orderNumber, string userName)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
