@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Interfaces
 {
-    public interface IOrderProcess
+    public interface IOrderQueue<T>
     {
     }
 }
