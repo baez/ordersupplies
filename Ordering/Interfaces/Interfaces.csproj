@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="IOrder.cs" />
     <Compile Include="IOrderItem.cs" />
+    <Compile Include="IOrderManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
