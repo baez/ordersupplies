@@ -26,7 +26,7 @@ namespace Contracts.OrderManagement
             //Here we make sure the username isn't Null
             if (UserName == null)
             {
-                throw new System.ArgumentException("Username cannot be null, no order created");
+                throw new ArgumentNullException("Username cannot be null, no order created");
             }
 
             if (OrderNumber <= 0)
