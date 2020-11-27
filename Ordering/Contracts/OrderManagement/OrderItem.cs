@@ -18,13 +18,12 @@ namespace Contracts
         public DateTime DateLastOrdered { get; set; }
         public OrderItemCategory Category { get; set; }
 
-        public OrderItem(string name, string itemDescription, double price, DateTime date, OrderItemCategory cateogry)
+        public OrderItem(string name, string itemDescription, double price, OrderItemCategory cateogry)
         {
             ItemID = CurrentItemID;
             Name = name;
             ItemDescription = itemDescription;
             Price = price;
-            DateLastOrdered = date;
             Category = cateogry;
             CurrentItemID++;
 
