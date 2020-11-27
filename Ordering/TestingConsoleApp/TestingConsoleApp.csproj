@@ -10,6 +10,8 @@
     <ProjectReference Include="..\Data.OrderManagement\Data.OrderManagement.csproj" />
     <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
     <ProjectReference Include="..\OrderManagement\OrderManagement.csproj" />
+    <ProjectReference Include="..\ProcessManagement\ProcessManagement.csproj" />
+    <ProjectReference Include="..\QueueManagement\QueueManagement.csproj" />
   </ItemGroup>
 
 </Project>

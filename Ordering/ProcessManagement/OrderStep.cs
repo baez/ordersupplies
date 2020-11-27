@@ -1,9 +1,6 @@
 ﻿using Interfaces.ProcessManagement;
+using Interfaces.QueueManagement;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProcessManagement
 {
@@ -11,6 +8,7 @@ namespace ProcessManagement
     {
         // add step activation datetime
 
-        public Interfaces.IOrderQueue<T> OrderQueue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public IOrderQueue<T> OrderQueue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        IOrderQueue<T> IOrderStep<T>.OrderQueue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }
