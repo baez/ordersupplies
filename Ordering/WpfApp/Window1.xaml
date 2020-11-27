@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
         Title="My first window for Order" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FFDFE1E4">
         <Button Click="Button_Click" Margin="204,214,488,165" Content="Save" MaxWidth="150" MaxHeight="25"></Button>
 
         <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="Username" Margin="204,68,0,0"/>
@@ -14,11 +14,16 @@
         <Label Content="Order Number" HorizontalAlignment="Left" Margin="55,111,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Width="100" Margin="204,112,0,282" Name="OrderNumber" MaxHeight="25" MaxWidth="150"/>
 
-        <ListBox Margin="542,243,0,0" MaxWidth="150" MaxHeight="60">
-            <ListBoxItem Selected="ListBoxItem_Selected">item1</ListBoxItem>
-            <ListBoxItem>item2</ListBoxItem>
+
+        <ListBox Margin="381,57,10.333,251.667" MaxWidth="400" MaxHeight="100" Name="catalogueViewer" Background="#FFD4D4D4">
         </ListBox>
-        
-        
+        <Button Name="addButton" Content="Add To Order" MaxWidth="150" MaxHeight="25" Click="addButton_Click" Margin="531,169,129.333,224.667" Background="#FF8BD58F" FontFamily="Arial" FontWeight="Bold"></Button>
+
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Catalogue" VerticalAlignment="Center" Margin="531,27,155.333,367.667" FontSize="22" FontFamily="Arial" FontWeight="Bold"/>
+        <ListBox Margin="381,241,10.333,71.667" MaxWidth="400" MaxHeight="100" Name="orderViewer" Background="#FFD4D4D4"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Order" VerticalAlignment="Center" Margin="560,211,173.333,183.667" FontSize="22" FontFamily="Arial" FontWeight="Bold" RenderTransformOrigin="0.749,0.471"/>
+        <Button Name="remButton" Content="Remove From Order" MaxWidth="150" MaxHeight="25" Click="remButton_Click" Margin="531,354,129.333,39.667" Background="#FFD58B8B" FontFamily="Arial" FontWeight="Bold"/>
+
+
     </Grid>
 </Window>
