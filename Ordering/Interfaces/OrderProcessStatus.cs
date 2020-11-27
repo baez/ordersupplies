@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Interfaces
 {
-    public enum ProcessStatus
+    public enum OrderProcessStatus
     {
         InProgress,
         Completed,

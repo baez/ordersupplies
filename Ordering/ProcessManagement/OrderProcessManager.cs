@@ -10,13 +10,21 @@ namespace ProcessManagement
      *    OrderPlacement --> OrderReview --> Purchasing --> Complete
      *    
      *    // process status: Done, InProgress, Cancelled
+     *    
+     *    Create a WPF Application and Add a UI form to view Order Processes and their Status
+     *    
+     *    
+     *    
      * */
 
     public class OrderProcessManager<T> : IOrderProcessManager<T>
     {
-        public void MoveToNextStep(IOrderProcess<T> order)
+        public void MoveToNextStep(IOrderProcess<T> orderProcess)
         {
-            
+            // do if it is not the last step
+            // find the current step in the list of process steps
+            // activate the next step
+            // set the process status
         }
     }
 

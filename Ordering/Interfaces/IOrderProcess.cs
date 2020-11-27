@@ -12,5 +12,7 @@ namespace Interfaces.ProcessManagement
 
         IOrderStep<T> CurrentStep { get; set; }
 
+        OrderProcessStatus Status { get; set; }
+
     }
 }
