@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfApp.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="My first window for Order" Height="450" Width="800">
+    <Grid>
+        <Button Click="Button_Click" Margin="204,214,488,165" Content="Save" MaxWidth="150" MaxHeight="25"></Button>
+
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="Username" Margin="204,68,0,0"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="55,68,0,0" VerticalAlignment="Top"/>
+        <Label Content="Order Number" HorizontalAlignment="Left" Margin="55,111,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Width="100" Margin="204,112,0,282" Name="OrderNumber" MaxHeight="25" MaxWidth="150"/>
+
+        <ListBox Margin="542,243,0,0" MaxWidth="150" MaxHeight="60">
+            <ListBoxItem Selected="ListBoxItem_Selected">item1</ListBoxItem>
+            <ListBoxItem>item2</ListBoxItem>
+        </ListBox>
+        
+        
+    </Grid>
+</Window>
