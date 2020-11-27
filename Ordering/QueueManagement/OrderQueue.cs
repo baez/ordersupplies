@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProcessManagement
+namespace QueueManagement
 {
-    public interface IOrderProcessManager<T>
+    public class OrderQueue<T> : IOrderQueue<T>
     {
-        void MoveToNextStep(IOrderProcess<T> orderProcess);
     }
 }

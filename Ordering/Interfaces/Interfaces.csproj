@@ -44,8 +44,12 @@
     <Compile Include="IOrder.cs" />
     <Compile Include="IOrderItem.cs" />
     <Compile Include="IOrderManager.cs" />
+    <Compile Include="IOrderProcess.cs" />
+    <Compile Include="IOrderProcessManager.cs" />
     <Compile Include="IOrderQueue.cs" />
+    <Compile Include="IOrderStep.cs" />
     <Compile Include="OrderItemCategory.cs" />
+    <Compile Include="OrderProcessStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
