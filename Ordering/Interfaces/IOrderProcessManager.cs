@@ -1,14 +1,11 @@
-﻿using Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Interfaces.ProcessManagement
 {
     public interface IOrderProcessManager<T>
     {
+        IList<IOrderProcess<T>> OrderProcesses { get; set; }
+
         void MoveToNextStep(IOrderProcess<T> orderProcess);
     }
 }
