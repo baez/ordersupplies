@@ -15,7 +15,7 @@ namespace Contracts
         public string Name { get; set; }
         public string ItemDescription { get; set; }
         public double Price { get; set; }
-        public OrderItemCategory Category { get; set; }
+        public OrderItemCategory OrderItemCategory { get; set; }
 
         public OrderItem(string name, string itemDescription, double price, OrderItemCategory cateogry)
         {
@@ -23,13 +23,13 @@ namespace Contracts
             Name = name;
             ItemDescription = itemDescription;
             Price = price;
-            Category = cateogry;
+            OrderItemCategory = cateogry;
             CurrentItemID++;
 
         }
         public override string ToString()
         {
-            return $"Item ID: {this.ItemID}, Item: {this.Name}, Price: {this.Price}, Category: {this.Category}, \nDescription: {this.ItemDescription}";
+            return $"Item ID: {this.ItemID}, Item: {this.Name}, Price: {this.Price}, Category: {this.OrderItemCategory}, \nDescription: {this.ItemDescription}";
         }
     }
 }
