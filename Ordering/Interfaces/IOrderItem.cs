@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interfaces.OrderManagement;
+using System;
 
 namespace Interfaces
 {
@@ -9,6 +10,6 @@ namespace Interfaces
         string ItemDescription { get; set; }
         double Price { get; set; }
         DateTime DateLastOrdered { get; set; }
-        OrderItemCategory Category { get; set; }
+        OrderItemCategory OrderItemCategory { get; set; }
     }
 }
