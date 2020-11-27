@@ -8,7 +8,6 @@ namespace Interfaces
         string Name { get; set; }
         string ItemDescription { get; set; }
         double Price { get; set; }
-        DateTime DateLastOrdered { get; set; }
         OrderItemCategory Category { get; set; }
     }
 }

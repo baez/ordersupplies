@@ -15,7 +15,6 @@ namespace Contracts
         public string Name { get; set; }
         public string ItemDescription { get; set; }
         public double Price { get; set; }
-        public DateTime DateLastOrdered { get; set; }
         public OrderItemCategory Category { get; set; }
 
         public OrderItem(string name, string itemDescription, double price, OrderItemCategory cateogry)
@@ -30,7 +29,7 @@ namespace Contracts
         }
         public override string ToString()
         {
-            return $"Item ID: {this.ItemID}, Item: {this.Name}, Price: {this.Price}, Category: {this.Category}, Last Ordered Date: {this.DateLastOrdered} \nDescription: {this.ItemDescription}";
+            return $"Item ID: {this.ItemID}, Item: {this.Name}, Price: {this.Price}, Category: {this.Category}, \nDescription: {this.ItemDescription}";
         }
     }
 }
