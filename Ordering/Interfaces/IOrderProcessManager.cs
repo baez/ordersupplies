@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProcessManagement
+namespace Interfaces.ProcessManagement
 {
     public interface IOrderProcessManager<T>
     {

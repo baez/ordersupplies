@@ -1,9 +1,4 @@
-﻿using Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Interfaces.ProcessManagement;
 
 namespace ProcessManagement
 {
@@ -13,6 +8,8 @@ namespace ProcessManagement
      *        |<-----------------|
      *        |                  |
      *    OrderPlacement --> OrderReview --> Purchasing --> Complete
+     *    
+     *    // process status: Done, InProgress, Cancelled
      * */
 
     public class OrderProcessManager<T> : IOrderProcessManager<T>
