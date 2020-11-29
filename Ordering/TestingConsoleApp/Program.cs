@@ -2,7 +2,7 @@
 using Contracts.OrderManagement;
 using Interfaces;
 using Ordering.BusinessLogic.OrderManagement;
-
+using ProcessManagement;
 
 namespace TestingConsoleApp
 {
@@ -20,5 +20,12 @@ namespace TestingConsoleApp
             //Console.WriteLine(TestOrder.NewOrder.UserName);
 
         }
+
+        public static void TestOrderProcess()
+        {
+            var orderProcess = new OrderProcess<IOrder>();
+        }
+
+
     }
 }

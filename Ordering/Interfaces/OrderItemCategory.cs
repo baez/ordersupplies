@@ -4,10 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Interfaces.OrderManagement
+namespace Interfaces
 {
     public enum OrderItemCategory
     {
-        Electronics
+        Stationary,
+        Computer,
+        Furniture,
+        PersonalProtectiveEquipment,
+        PackingSupplies,
+        FoodandDrink,
+        ComputerAccessories,
+        Software
     }
 }

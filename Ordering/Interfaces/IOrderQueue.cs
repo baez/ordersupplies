@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Interfaces
+﻿namespace Interfaces.QueueManagement
 {
     public interface IOrderQueue<T>
     {
+        T Dequeue();
+
+        void Enqueue(T item);
+
+        T Peek();
+
+        int Count();
     }
 }
