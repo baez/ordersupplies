@@ -24,6 +24,8 @@ namespace WpfApp
         
         public List<string> testOrder;
 
+        
+
         public Window1()
         {
             InitializeComponent();
@@ -40,6 +42,14 @@ namespace WpfApp
             testOrder = new List<string>();
 
             orderViewer.ItemsSource = testOrder;
+
+            //oswald
+            List<OrderItem> thisCatalogue = new List<OrderItem>();
+            OrderItem a = new OrderItem("pen", "blue", 9.00, 0);
+            OrderItem b = new OrderItem("pen", "red", 20.00, 0);
+            thisCatalogue.Add(a);
+            thisCatalogue.Add(b);
+            catalogueViewer.ItemsSource = thisCatalogue;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

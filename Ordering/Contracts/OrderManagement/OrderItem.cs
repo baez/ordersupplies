@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Contracts
+namespace Contracts.OrderManagement
 {
     public class OrderItem : IOrderItem
     {
