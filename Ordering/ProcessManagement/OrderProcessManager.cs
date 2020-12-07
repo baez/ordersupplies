@@ -1,5 +1,6 @@
 ﻿using Interfaces.ProcessManagement;
 using System.Collections.Generic;
+using Interfaces;
 
 namespace ProcessManagement
 {
@@ -22,10 +23,34 @@ namespace ProcessManagement
 
         public void MoveToNextStep(IOrderProcess<T> orderProcess)
         {
+            bool isDone = false;
             // do if it is not the last step
             // find the current step in the list of process steps
             // activate the next step
             // set the process status    
+            foreach(OrderProcess<T> op in OrderProcesses)
+            {
+                while (op.CurrentStep != /*last step*/) //not sure here
+                {
+                    foreach (OrderProcess<T> step in OrderProcesses)
+                    {
+                        if (step == orderProcess)
+                        {
+                            Console.Writeline("Currently in step :", step);
+                            if (!isDone)
+                            {
+                                orderProcess.Status = OrderProcessStatus.InProgress;
+                            }
+                            else if (isDone)
+                            {
+                                orderProcess.Status = OrderProcessStatus.Completed;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            
         }
     }
 
