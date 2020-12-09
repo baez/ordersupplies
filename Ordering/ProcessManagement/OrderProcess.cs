@@ -13,9 +13,12 @@ namespace ProcessManagement
         public List<IOrderStep<T>> Steps { get; set; }
         public IOrderStep<T> CurrentStep { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public OrderProcessStatus Status { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         // add date the incident is created
+        public DateTime IncidentDate { get; set; }
         // add incident number 
-        // 
+        public int IncidentNumber { get; set; }
+
         public OrderProcess()
         {
             Steps = new List<IOrderStep<T>>()
