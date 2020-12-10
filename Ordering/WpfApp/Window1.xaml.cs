@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Contracts.OrderManagement;
+using Interfaces;
 
 namespace WpfApp
 {
@@ -37,7 +38,7 @@ namespace WpfApp
             testCatalogue.Add("Test 1");
             testCatalogue.Add("Test 2");
             testCatalogue.Add("Test 3 - This is much longer item to test side scrolling");
-            catalogueViewer.ItemsSource = testCatalogue;
+            //catalogueViewer.ItemsSource = testCatalogue;
 
             testOrder = new List<string>();
 
@@ -45,15 +46,22 @@ namespace WpfApp
 
             //oswald
             List<OrderItem> thisCatalogue = new List<OrderItem>();
-            OrderItem a = new OrderItem("pen", "blue", 9.00, 0);
-            OrderItem b = new OrderItem("pen", "red", 20.00, 0);
-            thisCatalogue.Add(a);
-            thisCatalogue.Add(b);
+            thisCatalogue.Add(new OrderItem("pen", "blue", 9.00, 0));
+            thisCatalogue.Add(new OrderItem("pen", "red", 20.00, 0));
+            thisCatalogue.Add(new OrderItem("Chair", "red", 20.00, (OrderItemCategory)3));
+            thisCatalogue.Add(new OrderItem("Laser Printer", "HP", 200.00, (OrderItemCategory)6));
+            thisCatalogue.Add(new OrderItem("Laptop", "red", 20.00, (OrderItemCategory)1));
+            thisCatalogue.Add(new OrderItem("Face Mask", "Blue, 10 pack", 10, (OrderItemCategory)3));
+            
             catalogueViewer.ItemsSource = thisCatalogue;
+            //catalogList.ItemsSource = thisCatalogue;
         }
 
+        //Display current orders into debug console.
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+           
+            //jordan
             var order = new Order(Convert.ToInt32(OrderNumber.Text), Username.Text);
 
         }
