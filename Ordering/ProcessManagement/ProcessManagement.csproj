@@ -41,10 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateOrderStep.cs" />
     <Compile Include="OrderProcess.cs" />
     <Compile Include="OrderProcessManager.cs" />
-    <Compile Include="OrderStep.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
