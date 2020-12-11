@@ -23,7 +23,7 @@ namespace Ordering.BusinessLogic.OrderManagement
             NewOrder = new Order(orderNumber, userName);
     }
 
-        //public SortedList<Object, int> newOrder = new SortedList<Object, int>();
+        public SortedList<Object, int> newOrder = new SortedList<Object, int>();
         
 
         public void AddItem(IOrderItem item, int Quantity)
@@ -49,7 +49,7 @@ namespace Ordering.BusinessLogic.OrderManagement
             }
             else
             {
-                NewOrder.OrderList.RemoveAt(index);
+                NewOrder.OrderList.Remove(item);
                 NewOrder.OrderList.Add(item, newQuantity);
             }
         }
