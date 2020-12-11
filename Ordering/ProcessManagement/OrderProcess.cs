@@ -1,10 +1,6 @@
 ﻿using Interfaces;
 using Interfaces.ProcessManagement;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProcessManagement
 {
@@ -26,15 +22,14 @@ namespace ProcessManagement
 
         public void MoveToNextStep()
         {
-            if (Status == OrderProcessStatus.Completed || 
+            if (Status == OrderProcessStatus.Completed ||
                 Status == OrderProcessStatus.Cancelled ||
                 CurrentStep == ProcessStep.OrderCompletedStep)
             {
                 return;
             }
-
-            var steps = (ProcessStep[])Enum.GetValues(typeof(ProcessStep));
-            for(int i = 0; i < steps.Length; i++)
+            ProcessStep[] steps = ProcessHelper.GetProcessSteps();
+            for (int i = 0; i < steps.Length; i++)
             {
                 if (steps[i] == CurrentStep)
                 {

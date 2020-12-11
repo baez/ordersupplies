@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="OrderProcess.cs" />
     <Compile Include="OrderProcessManager.cs" />
+    <Compile Include="ProcessHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
