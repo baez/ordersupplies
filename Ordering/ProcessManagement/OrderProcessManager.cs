@@ -1,11 +1,12 @@
 ﻿using Interfaces.ProcessManagement;
 using System.Collections.Generic;
+using Interfaces;
+using System;
+using Interfaces.QueueManagement;
 
 namespace ProcessManagement
 {
     /*
-     * 
-     * 
      *        |<-----------------|
      *        |                  |
      *    OrderPlacement --> OrderReview --> Purchasing --> Complete
@@ -16,27 +17,26 @@ namespace ProcessManagement
      *    
      * */
 
-    public class OrderProcessManager<T> : IOrderProcessManager<T>
+    public class OrderProcessManager : IOrderProcessManager
     {
-        public IList<IOrderProcess<T>> OrderProcesses { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        public IList<IOrderProcess> OrderProcesses { get; set; }
 
-        public void MoveToNextStep(IOrderProcess<T> orderProcess)
+        public OrderProcessManager()
         {
-            // do if it is not the last step
-            // find the current step in the list of process steps
-            // activate the next step
-            // set the process status    
+
+        }
+
+        public void MoveToNextStep(IOrderProcess orderProcess)
+        {
+            foreach(OrderProcess op in OrderProcesses)
+            {
+                if (op.IncidentNumber == orderProcess.IncidentNumber)
+                {
+                    op.MoveToNextStep();
+                    break;
+                }
+     
+            }
         }
     }
-
-    //public class OrderProcess<T>
-    //{
-    //}
-
-    //public class OrderProcessInstance<T> : OrderProcess
-    //{
-    //}
-
-
-    //just testing to add a file2
 }
