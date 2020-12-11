@@ -24,7 +24,7 @@ namespace WpfApp
 
         
         public List<string> testOrder;
-
+        public Order cart;
         
 
         public Window1()
@@ -41,6 +41,7 @@ namespace WpfApp
             //catalogueViewer.ItemsSource = testCatalogue;
 
             testOrder = new List<string>();
+            //cart = new Order();
 
             orderViewer.ItemsSource = testOrder;
 
@@ -48,20 +49,19 @@ namespace WpfApp
             List<OrderItem> thisCatalogue = new List<OrderItem>();
             thisCatalogue.Add(new OrderItem("pen", "blue", 9.00, 0));
             thisCatalogue.Add(new OrderItem("pen", "red", 20.00, 0));
-            thisCatalogue.Add(new OrderItem("Chair", "red", 20.00, (OrderItemCategory)3));
-            thisCatalogue.Add(new OrderItem("Laser Printer", "HP", 200.00, (OrderItemCategory)6));
-            thisCatalogue.Add(new OrderItem("Laptop", "red", 20.00, (OrderItemCategory)1));
-            thisCatalogue.Add(new OrderItem("Face Mask", "Blue, 10 pack", 10, (OrderItemCategory)3));
+            thisCatalogue.Add(new OrderItem("Chair", "red", 20.00, OrderItemCategory.Furniture));
+            thisCatalogue.Add(new OrderItem("Laser Printer", "HP", 200.00, OrderItemCategory.ComputerAccessories));
+            thisCatalogue.Add(new OrderItem("Laptop", "red", 20.00, OrderItemCategory.Computer));
+            thisCatalogue.Add(new OrderItem("Face Mask", "Blue, 10 pack", 10, OrderItemCategory.PersonalProtectiveEquipment));
             
             catalogueViewer.ItemsSource = thisCatalogue;
             //catalogList.ItemsSource = thisCatalogue;
         }
 
         //Display current orders into debug console.
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnSave(object sender, RoutedEventArgs e)
         {
            
-            //jordan
             var order = new Order(Convert.ToInt32(OrderNumber.Text), Username.Text);
 
         }
@@ -84,6 +84,7 @@ namespace WpfApp
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
             string newItem = catalogueViewer.SelectedItem.ToString();
+            //cart.Add((OrderItem)catalogueViewer.SelectedItem);
             testOrder.Add(newItem);
             orderViewer.Items.Refresh();
         }
@@ -94,5 +95,6 @@ namespace WpfApp
             testOrder.Remove(remItem);
             orderViewer.Items.Refresh();
         }
+        
     }
 }

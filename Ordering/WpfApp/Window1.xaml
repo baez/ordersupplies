@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="My first window for Order" Height="450" Width="800">
     <Grid Background="#FFDFE1E4" Margin="0,0,-50,0">
-        <Button Click="Button_Click" Margin="204,214,488,165" Content="Save" MaxWidth="150" MaxHeight="25"></Button>
+        <Button Click="BtnSave" Margin="204,214,488,165" Content="Save" MaxWidth="150" MaxHeight="25"></Button>
 
         <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="Username" Margin="204,68,0,0"/>
         <Label Content="Username" HorizontalAlignment="Left" Margin="55,68,0,0" VerticalAlignment="Top"/>
