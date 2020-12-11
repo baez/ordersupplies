@@ -19,13 +19,28 @@ namespace TestingConsoleApp
             //TestOrder.ViewOrder();
             //Console.WriteLine(TestOrder.NewOrder.UserName);
 
+            TestOrderProcess();
         }
 
         public static void TestOrderProcess()
         {
-            var orderProcess = new OrderProcess<IOrder>();
+            var orderProcess = new OrderProcess(1);
+            Console.WriteLine("Order Created - Current Step: {0}", orderProcess.CurrentStep);
+
+            orderProcess.MoveToNextStep();
+            Console.WriteLine("MoveToNextStep 1 - Current Step: {0}", orderProcess.CurrentStep);
+
+            orderProcess.MoveToNextStep();
+            Console.WriteLine("MoveToNextStep 2 - Current Step: {0}", orderProcess.CurrentStep);
+
+            orderProcess.MoveToNextStep();
+            Console.WriteLine("MoveToNextStep 3 - Current Step: {0}", orderProcess.CurrentStep);
+
+            orderProcess.MoveToNextStep();
+            Console.WriteLine("MoveToNextStep 4 - Current Step: {0}", orderProcess.CurrentStep);
+
+            orderProcess.MoveToNextStep();
+            Console.WriteLine("MoveToNextStep 5 - Already Completed - Current Step: {0}", orderProcess.CurrentStep);
         }
-
-
     }
 }

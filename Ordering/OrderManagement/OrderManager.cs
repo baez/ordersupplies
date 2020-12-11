@@ -10,7 +10,7 @@ using Interfaces;
 
 namespace Ordering.BusinessLogic.OrderManagement
 {
-    public class OrderManager: IOrderManager
+    public class OrderManager : IOrderManager
     {
         public int OrderNumber { get; set; }
         public string UserName { get; set; }
@@ -21,10 +21,10 @@ namespace Ordering.BusinessLogic.OrderManagement
             OrderNumber = orderNumber;
             UserName = userName;
             NewOrder = new Order(orderNumber, userName);
-    }
+        }
 
         public SortedList<Object, int> newOrder = new SortedList<Object, int>();
-        
+
 
         public void AddItem(IOrderItem item, int Quantity)
         {

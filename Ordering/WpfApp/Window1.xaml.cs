@@ -12,8 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Contracts.OrderManagement;
-using Newtonsoft.Json;
-using System.IO;
+using Interfaces;
 
 namespace WpfApp
 {
@@ -26,13 +25,18 @@ namespace WpfApp
         //Add quantity to order system
         //write order to JSON 
 
+
+        
+        public List<string> testOrder;
+        public Order cart;       
+
         //Remove item needs to be rewritten
 
 
         //We need to set up these to use in the program
         public Order newOrder;
         public List<OrderItem> thisCatalogue;
-        public List<Order> previousOrders;
+
 
 
         public Window1()
@@ -48,20 +52,30 @@ namespace WpfApp
             //This sets up our window
             this.Width = 1000;
             this.Height = 500;
+
             this.Title = "Welcome to Our Catalogue";
 
             //Here we'll handle our previous order lists
 
-            previousOrders = new List<Order>();
+
+
 
             //oswald
+
             thisCatalogue = new List<OrderItem>();
             OrderItem a = new OrderItem("pen", "blue", 9.99, 0);
             OrderItem b = new OrderItem("pens", "red", 20.49, 0);
             thisCatalogue.Add(a);
             thisCatalogue.Add(b);
+            thisCatalogue.Add(new OrderItem("Chair", "red", 20.00, OrderItemCategory.Furniture));
+            thisCatalogue.Add(new OrderItem("Laser Printer", "HP", 200.00, OrderItemCategory.ComputerAccessories));
+            thisCatalogue.Add(new OrderItem("Laptop", "red", 20.00, OrderItemCategory.Computer));
+            thisCatalogue.Add(new OrderItem("Face Mask", "Blue, 10 pack", 10, OrderItemCategory.PersonalProtectiveEquipment));
+
             catalogueViewer.ItemsSource = thisCatalogue;
+            //catalogList.ItemsSource = thisCatalogue;
         }
+
 
         //This handles creating our initial order, which we will add items too
         private void Create_Order(object sender, RoutedEventArgs e)
@@ -69,6 +83,7 @@ namespace WpfApp
             //First we create a variable for our username
             string userName = Username.Text;
             int orderNumber = 0;
+
 
             //Now we try and get an integer for the order Number
             try
@@ -117,11 +132,11 @@ namespace WpfApp
         private void Submit_Order(object sender, RoutedEventArgs e)
         {
             //First we use the class method to make a JSON object
-            //newOrder.SubmitOrder();
+            newOrder.SubmitOrder();
 
             //For now we just display it
             Console.WriteLine("Here is the final order:");
-            //Console.WriteLine(newOrder.FinalOrder);
+            Console.WriteLine(newOrder.FinalOrder);
 
             //We clear our text boxes
             Username.Text = "";
@@ -137,15 +152,6 @@ namespace WpfApp
             //And let the user know the order has been submitted
             errorMessage.Text = "Order: " + newOrder.OrderNumber + ", successfully submitted by " + newOrder.UserName + "!\nFinal Total: $" + newOrder.TotalCost;
 
-            //We add this order to our previous order list
-            previousOrders.Add(newOrder);
-
-            //Now we covert our list to a JSON string
-            string JSONList = JsonConvert.SerializeObject(previousOrders, Formatting.Indented);
-            
-            //This writes our JSON List to a local file.
-            File.WriteAllText(@"OrderBackup.JSON", JSONList);
-
             //Then we overwrite the order with a placeholder to clear it
             newOrder = new Order(1, "PlaceHolder");
 
@@ -156,6 +162,12 @@ namespace WpfApp
         //This function handles adding an item to the order
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
+
+            //string newItem = catalogueViewer.SelectedItem.ToString();
+            //cart.Add((OrderItem)catalogueViewer.SelectedItem);
+            //testOrder.Add(newItem);
+            //orderViewer.Items.Refresh();
+
             //First we get the index of our selected item
             int selectedIndex = catalogueViewer.SelectedIndex;
 
@@ -202,6 +214,7 @@ namespace WpfApp
                 //And update our total cost
                 Cost.Text = "Total Cost: $" + newOrder.TotalCost;
             }
+
         }
 
         private void remButton_Click(object sender, RoutedEventArgs e)
@@ -228,12 +241,14 @@ namespace WpfApp
                 errorMessage.Text = "Item could not be removed!";
             }
             
+
             //And we can remove the item.
             newOrder.RemoveItem(itemID);
 
             //And we refresh the order view
             orderViewer.Items.Refresh();
 
+            Console.WriteLine(orderViewer.Items.Count);
             //If there aren't any items, we disable the remove items button
             if(orderViewer.Items.Count == 0)
             {
@@ -267,10 +282,6 @@ namespace WpfApp
             //Then we overwrite the order with a placeholder to clear it
             newOrder = new Order(1, "PlaceHolder");
         }
-
-        private void LoadOrders()
-        {
-            
-        }
+        
     }
 }
