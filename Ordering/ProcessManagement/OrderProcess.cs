@@ -8,39 +8,50 @@ using System.Threading.Tasks;
 
 namespace ProcessManagement
 {
-    public class OrderProcess<T> : IOrderProcess<T>
+    public class OrderProcess : IOrderProcess
     {
+        private const int NumberOfSteps = 4;
         //remove all not implemented exceptions
         //replace list into an array of enum
-        public OrderSteps[] Steps {get;}
-        public IOrderStep<T> CurrentStep { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public OrderProcessStatus Status { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public ProcessStep CurrentStep { get; private set; }
+
+        public OrderProcessStatus Status { get; }
 
         // add date the incident is created
-        public DateTime IncidentDate { get; set; }
+        public DateTime IncidentActivationTime { get; }
         // add incident number 
-        public int IncidentNumber { get; set; }
-
-
+        
+        public int IncidentNumber { get; }
+        
         //constructor
         //set values in the class, required values
         public OrderProcess(int incidentNumber)
         {
             //add 
             //make it into an array
-            Steps = new OrderSteps[4]
-                {
-                    
-                }
+            IncidentNumber = incidentNumber;
+            IncidentActivationTime = DateTime.UtcNow;
         }
 
 
         public void MoveToNextStep()
         {
+            if (CurrentStep == ProcessStep.OrderCompletedStep)
+            {
+                return;
+            }
+
             //find a current step inside the order steps array
             //set current step next item on the array
-
-            
+            var steps = (ProcessStep[])Enum.GetValues(typeof(ProcessStep));
+            for(int i = 0; i < steps.Length; i++)
+            {
+                if (steps[i] == CurrentStep)
+                {
+                    CurrentStep = steps[i + 1];
+                    break;
+                }
+            }
         }
     }
 }

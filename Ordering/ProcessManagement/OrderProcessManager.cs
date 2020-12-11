@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Interfaces;
 using System;
+using Interfaces.QueueManagement;
 
 namespace ProcessManagement
 {
@@ -22,26 +23,24 @@ namespace ProcessManagement
     {
         //remove not implemented exceptions whenever you see it
         //add constructor to your class
-        public IList<IOrderProcess<T>> OrderProcesses { get; set; }
+        public IList<IOrderProcess> OrderProcesses { get; set; }
 
-
-        public void MoveToNextStep(IOrderProcess<T> orderProcess)
+        public void MoveToNextStep(IOrderProcess orderProcess)
         {
             bool isDone = false;
             // do if it is not the last step
             // find the current step in the list of process steps
             // activate the next step
             // set the process status    
-            foreach(OrderProcess<T> op in OrderProcesses)
+            foreach(OrderProcess op in OrderProcesses)
             {
                 if (op.IncidentNumber == orderProcess.IncidentNumber)
                 {
                     op.MoveToNextStep();
+                    break;
                 }
      
             }
-            
-            
         }
     }
 

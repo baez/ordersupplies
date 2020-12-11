@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Interfaces.QueueManagement;
+using System.Collections.Generic;
 
 namespace Interfaces.ProcessManagement
 {
     public interface IOrderProcessManager<T>
     {
-        IList<IOrderProcess<T>> OrderProcesses { get; set; }
+        IList<IOrderProcess> OrderProcesses { get; set; }
 
-        void MoveToNextStep(IOrderProcess<T> orderProcess);
+        void MoveToNextStep(IOrderProcess orderProcess);
     }
 }
