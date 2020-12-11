@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Interfaces.ProcessManagement
 {
-    public interface IOrderProcessManager<T>
+    public interface IOrderProcessManager
     {
         IList<IOrderProcess> OrderProcesses { get; set; }
 

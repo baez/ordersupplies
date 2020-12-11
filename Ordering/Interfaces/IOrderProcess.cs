@@ -12,5 +12,9 @@ namespace Interfaces.ProcessManagement
         DateTime IncidentActivationTime { get; }
 
         int IncidentNumber { get; }
+
+        void Cancel();
+
+        void MoveToNextStep();
     }
 }
