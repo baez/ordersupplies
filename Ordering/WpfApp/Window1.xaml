@@ -7,22 +7,26 @@
         mc:Ignorable="d"
         Title="My first window for Order" Height="450" Width="800">
     <Grid Background="#FFDFE1E4">
-        <Button Click="Button_Click" Margin="204,214,488,165" Content="Save" MaxWidth="150" MaxHeight="25"></Button>
+        <Button Click="Create_Order" Name="createOrder" Margin="117,154,574.333,224.667" Content="Create Order" MaxWidth="150" MaxHeight="25" FontWeight="Bold"></Button>
 
-        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="Username" Margin="204,68,0,0"/>
-        <Label Content="Username" HorizontalAlignment="Left" Margin="55,68,0,0" VerticalAlignment="Top"/>
-        <Label Content="Order Number" HorizontalAlignment="Left" Margin="55,111,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Width="100" Margin="204,112,0,282" Name="OrderNumber" MaxHeight="25" MaxWidth="150"/>
+        <TextBox HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Name="Username" Margin="164,71,509.333,326.667"/>
+        <Label Content="Username" HorizontalAlignment="Center" Margin="55,71,675.333,323.667" VerticalAlignment="Center"/>
+        <Label Content="Order Number" HorizontalAlignment="Center" Margin="55,112,651.333,282.667" VerticalAlignment="Center"/>
+        <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Margin="184,115,509.333,282.667" Name="OrderNumber" MaxHeight="25" MaxWidth="150" Height="23"/>
 
 
-        <ListBox Margin="381,57,10.333,251.667" MaxWidth="400" MaxHeight="100" Name="catalogueViewer" Background="#FFD4D4D4">
+        <ListBox Margin="381,57,10.333,251.667" MaxWidth="400" MaxHeight="100" Name="catalogueViewer" Background="#FFD4D4D4" SelectedIndex="0">
         </ListBox>
-        <Button Name="addButton" Content="Add To Order" MaxWidth="150" MaxHeight="25" Click="addButton_Click" Margin="531,169,129.333,224.667" Background="#FF8BD58F" FontFamily="Arial" FontWeight="Bold"></Button>
+        <Button Name="addButton" Content="Add To Order" MaxWidth="150" MaxHeight="25" Click="addButton_Click" Margin="608,169,52.333,224.667" Background="#FF8BD58F" FontFamily="Arial" FontWeight="Bold"></Button>
 
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Catalogue" VerticalAlignment="Center" Margin="531,27,155.333,367.667" FontSize="22" FontFamily="Arial" FontWeight="Bold"/>
         <ListBox Margin="381,241,10.333,71.667" MaxWidth="400" MaxHeight="100" Name="orderViewer" Background="#FFD4D4D4"/>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Order" VerticalAlignment="Center" Margin="560,211,173.333,183.667" FontSize="22" FontFamily="Arial" FontWeight="Bold" RenderTransformOrigin="0.749,0.471"/>
         <Button Name="remButton" Content="Remove From Order" MaxWidth="150" MaxHeight="25" Click="remButton_Click" Margin="531,354,129.333,39.667" Background="#FFD58B8B" FontFamily="Arial" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Margin="55,211,670.333,193.667" FontSize="14" FontFamily="Arial" FontWeight="Bold" RenderTransformOrigin="0.325,5.386" Name="errorMessage"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Quantity" VerticalAlignment="Center" Margin="437,172,299.333,231.667" FontFamily="Arial" FontWeight="Bold" RenderTransformOrigin="0.749,0.471" FontSize="14"/>
+        <TextBox HorizontalAlignment="Center" Width="50" Margin="499,169,244.333,228.667" x:Name="Quantity" MaxHeight="25" MaxWidth="150" Text="1"/>
+        <Button Click="Submit_Order" x:Name="submitButton" Margin="284,349,407.333,29.667" Content="Submit Order" MaxWidth="150" MaxHeight="25" FontWeight="Bold" Background="#FF3A9415"/>
 
 
     </Grid>
