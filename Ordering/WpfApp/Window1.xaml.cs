@@ -27,9 +27,10 @@ namespace WpfApp
         //Remove item needs to be rewritten
 
 
-        public Order testOrder;
+        //We need to set up these to use in the program
         public Order newOrder;
         public List<OrderItem> thisCatalogue;
+
 
         public Window1()
         {
@@ -46,18 +47,17 @@ namespace WpfApp
             this.Height = 500;
             this.Title = "Welcome to Our Catalogue";
 
+            //Here we'll handle our previous order lists
+
+
 
             //oswald
             thisCatalogue = new List<OrderItem>();
-            OrderItem a = new OrderItem("pen", "blue", 9.00, 0);
-            OrderItem b = new OrderItem("pens", "red", 20.00, 0);
+            OrderItem a = new OrderItem("pen", "blue", 9.99, 0);
+            OrderItem b = new OrderItem("pens", "red", 20.49, 0);
             thisCatalogue.Add(a);
             thisCatalogue.Add(b);
             catalogueViewer.ItemsSource = thisCatalogue;
-
-            testOrder = new Order(123, "hi");
-
-            
         }
 
         //This handles creating our initial order, which we will add items too
@@ -77,9 +77,6 @@ namespace WpfApp
                 errorMessage.Text = "Please enter a whole number for the order number.";
                 return;
             }
-
-
-
 
             //Now we check to make sure something valid was entered
             if(orderNumber == 0 || userName == "")
@@ -135,10 +132,13 @@ namespace WpfApp
             deleteOrderButton.IsEnabled = false;
 
             //And let the user know the order has been submitted
-            errorMessage.Text = "Order: " + newOrder.OrderNumber + ", successfully submitted by " + newOrder.UserName + "!";
+            errorMessage.Text = "Order: " + newOrder.OrderNumber + ", successfully submitted by " + newOrder.UserName + "!\nFinal Total: $" + newOrder.TotalCost;
 
             //Then we overwrite the order with a placeholder to clear it
             newOrder = new Order(1, "PlaceHolder");
+
+            //And clear our total cost
+            Cost.Text = "Total Cost: $0.00";
         }
 
         //This function handles adding an item to the order
@@ -184,8 +184,11 @@ namespace WpfApp
                 //and enable our remove button
                 remButton.IsEnabled = true;
 
-                //And reset the quantity to one
+                //Reset the quantity to one
                 Quantity.Text = "1";
+
+                //And update our total cost
+                Cost.Text = "Total Cost: $" + newOrder.TotalCost;
             }
         }
 
@@ -226,6 +229,9 @@ namespace WpfApp
             {
                 remButton.IsEnabled = false;
             }
+
+            //And update our total cost
+            Cost.Text = "Total Cost: $" + newOrder.TotalCost;
         }
 
         //This handles deleting an order entirely
@@ -244,6 +250,9 @@ namespace WpfApp
 
             //And let the user know the order has been submitted
             errorMessage.Text = "Order: " + newOrder.OrderNumber + ", has been deleted by " + newOrder.UserName + "!";
+
+            //And clear our total cost
+            Cost.Text = "Total Cost: $0.00";
 
             //Then we overwrite the order with a placeholder to clear it
             newOrder = new Order(1, "PlaceHolder");

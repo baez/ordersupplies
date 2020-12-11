@@ -37,6 +37,15 @@ namespace Contracts.OrderManagement
 
         }
 
+        public void OrderTotal()
+        {
+            TotalCost = 0.00;
+            foreach (KeyValuePair<IOrderItem, int> KVP in OrderList)
+            {
+                TotalCost += (KVP.Key.Price * KVP.Value);
+            }
+        }
+
         public void AddItem(IOrderItem item, int Quantity)
         {
             var toAdd = item;
@@ -65,6 +74,9 @@ namespace Contracts.OrderManagement
                 OrderList.Remove(item);
                 OrderList.Add(item, newQuantity);
             }
+
+            //Finally we add up our new total
+            OrderTotal();
         }
 
         //This handles removing an item
@@ -88,13 +100,15 @@ namespace Contracts.OrderManagement
                 }
 
             }
+            //Finally we add up our new total
+            OrderTotal();
         }
 
         //This handles outputting our order to a JSON object
         public void SubmitOrder()
         {
             //We start building our JSON object with the username, ordernumber, and date, and set up a placeholder for items
-            string orderString = $"{{\"userName\":\"{UserName}\",\"orderNumber\":{OrderNumber},\"dateOrdered\":{DateOrdered},\"items\":{{";
+            string orderString = $"{{\"userName\":\"{UserName}\",\"orderNumber\":{OrderNumber},\"dateOrdered\":{DateOrdered},\"totalCost\":{TotalCost},\"items\":{{";
 
             //Now we iterate through our list, adding items as we go
             int i = 0;
