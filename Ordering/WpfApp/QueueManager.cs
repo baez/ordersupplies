@@ -1,21 +1,31 @@
 ﻿using Contracts.OrderManagement;
+using Interfaces;
 using Interfaces.QueueManagement;
-using QueueManagement;
+using ProcessManagement;
+using System.Collections.Generic;
 
 namespace WpfApp
 {
     public class QueueManager
     {
-        private IOrderQueue<Order> InitiateOrderQueue;
+        private static Dictionary<ProcessStep, IOrderQueue<Order>> Queues;
 
         public QueueManager()
         {
-            InitiateOrderQueue = new OrderQueue<Order>();
+            Queues = new Dictionary<ProcessStep, IOrderQueue<Order>>(ProcessHelper.GetProcessStepCount());
         }
 
-        public void AddOrder(Order order)
+        public void InitiateOrder(Order order)
         {
-            InitiateOrderQueue.Enqueue(order);
+            AddToQueue(ProcessStep.CreateOrderStep, order);
+        }
+
+        private void AddToQueue(ProcessStep processStep, Order order)
+        {
+            if (Queues.ContainsKey(processStep))
+            {
+                Queues[processStep].Enqueue(order);
+            }
         }
     }
 }

@@ -109,6 +109,10 @@
       <Project>{37813e08-7706-4f93-a70d-a165ea964333}</Project>
       <Name>OrderManagement</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ProcessManagement\ProcessManagement.csproj">
+      <Project>{aaf7eb5d-f832-4cbe-987f-794871a631c9}</Project>
+      <Name>ProcessManagement</Name>
+    </ProjectReference>
     <ProjectReference Include="..\QueueManagement\QueueManagement.csproj">
       <Project>{7bf6dc2b-3a0b-4d89-a010-ed8b8a938b61}</Project>
       <Name>QueueManagement</Name>

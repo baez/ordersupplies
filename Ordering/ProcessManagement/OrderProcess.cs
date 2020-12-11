@@ -26,15 +26,14 @@ namespace ProcessManagement
 
         public void MoveToNextStep()
         {
-            if (Status == OrderProcessStatus.Completed || 
+            if (Status == OrderProcessStatus.Completed ||
                 Status == OrderProcessStatus.Cancelled ||
                 CurrentStep == ProcessStep.OrderCompletedStep)
             {
                 return;
             }
-
-            var steps = (ProcessStep[])Enum.GetValues(typeof(ProcessStep));
-            for(int i = 0; i < steps.Length; i++)
+            ProcessStep[] steps = ProcessHelper.GetProcessStep();
+            for (int i = 0; i < steps.Length; i++)
             {
                 if (steps[i] == CurrentStep)
                 {
