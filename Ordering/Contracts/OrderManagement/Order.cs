@@ -12,7 +12,7 @@ namespace Contracts.OrderManagement
         public string UserName { get; set; }
         public double TotalCost { get; set; }
         public DateTime DateOrdered { get; set; }
-        public string FinalOrder { get; set; }
+        //public string FinalOrder { get; set; }
 
         public Dictionary<IOrderItem, int> OrderList;
 
@@ -21,7 +21,7 @@ namespace Contracts.OrderManagement
             OrderNumber = orderNumber;
             UserName = userName;
             TotalCost = 0.00;
-            DateOrdered = DateTime.Now;
+            
             OrderList = new Dictionary<IOrderItem, int>();
 
             //Here we make sure the username isn't Null
@@ -107,6 +107,7 @@ namespace Contracts.OrderManagement
         //This handles outputting our order to a JSON object
         public void SubmitOrder()
         {
+            DateOrdered = DateTime.Now;
             ////We start building our JSON object with the username, ordernumber, and date, and set up a placeholder for items
             //string orderString = $"{{\"userName\":\"{UserName}\",\"orderNumber\":{OrderNumber},\"dateOrdered\":{DateOrdered},\"totalCost\":{TotalCost},\"items\":{{";
 

@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Contracts.OrderManagement;
 using Interfaces;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace WpfApp
 {
@@ -36,6 +38,7 @@ namespace WpfApp
         //We need to set up these to use in the program
         public Order newOrder;
         public List<OrderItem> thisCatalogue;
+        public List<Order> previousOrders;
 
 
 
@@ -56,6 +59,7 @@ namespace WpfApp
             this.Title = "Welcome to Our Catalogue";
 
             //Here we'll handle our previous order lists
+            previousOrders = new List<Order>();
 
 
 
@@ -94,6 +98,16 @@ namespace WpfApp
             {
                 errorMessage.Text = "Please enter a whole number for the order number.";
                 return;
+            }
+
+            //Then we check to see if the order number is taken
+            foreach(Order O in previousOrders)
+            {
+                if (O.OrderNumber == orderNumber)
+                {
+                    errorMessage.Text = "That order number is already in use.";
+                    return;
+                }
             }
 
             //Now we check to make sure something valid was entered
@@ -136,7 +150,16 @@ namespace WpfApp
 
             //For now we just display it
             Console.WriteLine("Here is the final order:");
-            Console.WriteLine(newOrder.FinalOrder);
+            //Console.WriteLine(newOrder.FinalOrder);
+
+            //We add this order to our previous order list
+            previousOrders.Add(newOrder);
+
+            //Now we covert our list to a JSON string
+            string JSONList = JsonConvert.SerializeObject(previousOrders, Formatting.Indented);
+
+            //This writes our JSON List to a local file.
+            File.WriteAllText(@"OrderBackup.JSON", JSONList);
 
             //We clear our text boxes
             Username.Text = "";
