@@ -1,6 +1,7 @@
 ﻿using Interfaces.ProcessManagement;
 using System.Collections.Generic;
 using Interfaces;
+using System;
 
 namespace ProcessManagement
 {
@@ -19,7 +20,10 @@ namespace ProcessManagement
 
     public class OrderProcessManager<T> : IOrderProcessManager<T>
     {
-        public IList<IOrderProcess<T>> OrderProcesses { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        //remove not implemented exceptions whenever you see it
+        //add constructor to your class
+        public IList<IOrderProcess<T>> OrderProcesses { get; set; }
+
 
         public void MoveToNextStep(IOrderProcess<T> orderProcess)
         {
@@ -30,24 +34,11 @@ namespace ProcessManagement
             // set the process status    
             foreach(OrderProcess<T> op in OrderProcesses)
             {
-                while (op.CurrentStep != /*last step*/) //not sure here
+                if (op.IncidentNumber == orderProcess.IncidentNumber)
                 {
-                    foreach (OrderProcess<T> step in OrderProcesses)
-                    {
-                        if (step == orderProcess)
-                        {
-                            Console.Writeline("Currently in step :", step);
-                            if (!isDone)
-                            {
-                                orderProcess.Status = OrderProcessStatus.InProgress;
-                            }
-                            else if (isDone)
-                            {
-                                orderProcess.Status = OrderProcessStatus.Completed;
-                            }
-                        }
-                    }
+                    op.MoveToNextStep();
                 }
+     
             }
             
             
@@ -64,4 +55,22 @@ namespace ProcessManagement
 
 
     //just testing to add a file2
+
+    //while (op.CurrentStep != /*last step*/) //not sure here
+    //            {
+    //                foreach (OrderProcess<T> step in OrderProcesses)
+    //                {
+    //                    if (step == orderProcess)
+    //                    {
+    //                        Console.WriteLine("Currently in step :", step);
+    //                        if (!isDone)
+    //                        {
+    //                            orderProcess.Status = OrderProcessStatus.InProgress;
+    //                        }
+    //                        else if (isDone)
+    //                        {
+    //                            orderProcess.Status = OrderProcessStatus.Completed;
+    //                        }
+    //                    }
+    //                }
 }

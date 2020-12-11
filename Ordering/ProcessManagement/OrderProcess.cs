@@ -11,7 +11,8 @@ namespace ProcessManagement
     public class OrderProcess<T> : IOrderProcess<T>
     {
         //remove all not implemented exceptions
-        public List<IOrderStep<T>> Steps { get; set; }
+        //replace list into an array of enum
+        public OrderSteps[] Steps {get;}
         public IOrderStep<T> CurrentStep { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public OrderProcessStatus Status { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
@@ -25,13 +26,21 @@ namespace ProcessManagement
         //set values in the class, required values
         public OrderProcess(int incidentNumber)
         {
-            //add steps
-            Steps = new List<IOrderStep<T>>()
-            {
-                new CreateOrderStep<T>(),
-                new RequestOrder<T>(),
-                new 
-            };
+            //add 
+            //make it into an array
+            Steps = new OrderSteps[4]
+                {
+                    
+                }
+        }
+
+
+        public void MoveToNextStep()
+        {
+            //find a current step inside the order steps array
+            //set current step next item on the array
+
+            
         }
     }
 }
