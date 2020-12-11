@@ -2,6 +2,7 @@
 using Interfaces;
 using Interfaces.QueueManagement;
 using ProcessManagement;
+using QueueManagement;
 using System.Collections.Generic;
 
 namespace WpfApp
@@ -12,7 +13,7 @@ namespace WpfApp
 
         public QueueManager()
         {
-            Queues = new Dictionary<ProcessStep, IOrderQueue<Order>>(ProcessHelper.GetProcessStepCount());
+            InitializeQueues();            
         }
 
         public void InitiateOrder(Order order)
@@ -25,6 +26,17 @@ namespace WpfApp
             if (Queues.ContainsKey(processStep))
             {
                 Queues[processStep].Enqueue(order);
+            }
+        }
+
+        private void InitializeQueues()
+        {
+            Queues = new Dictionary<ProcessStep, IOrderQueue<Order>>(ProcessHelper.GetProcessStepsCount());
+
+            ProcessStep[] steps = ProcessHelper.GetProcessSteps();
+            for (int i = 0; i < steps.Length; i++)
+            {
+                Queues[steps[i]] = new OrderQueue<Order>();
             }
         }
     }

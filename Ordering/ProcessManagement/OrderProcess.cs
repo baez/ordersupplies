@@ -1,10 +1,6 @@
 ﻿using Interfaces;
 using Interfaces.ProcessManagement;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProcessManagement
 {
@@ -32,7 +28,7 @@ namespace ProcessManagement
             {
                 return;
             }
-            ProcessStep[] steps = ProcessHelper.GetProcessStep();
+            ProcessStep[] steps = ProcessHelper.GetProcessSteps();
             for (int i = 0; i < steps.Length; i++)
             {
                 if (steps[i] == CurrentStep)
