@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Interfaces.QueueManagement;
+using System.Collections.Generic;
 
 namespace Interfaces.ProcessManagement
 {
@@ -9,6 +10,8 @@ namespace Interfaces.ProcessManagement
         IOrderStep<T> CurrentStep { get; set; }
 
         OrderProcessStatus Status { get; set; }
+
+        List<IOrderQueue<T>> OrderQueues { get; set; }
 
     }
 }

@@ -1,10 +1,12 @@
 ﻿using Interfaces.QueueManagement;
+using System;
 
 namespace Interfaces.ProcessManagement
 {
     public interface IOrderStep<T>
     {
-        IOrderQueue<T> OrderQueue { get; set; }
+        
 
+        //DateTime Add(TimeSpan value);
     }
 }
