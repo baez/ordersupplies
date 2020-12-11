@@ -39,6 +39,7 @@ namespace WpfApp
             addButton.IsEnabled = false;
             submitButton.IsEnabled = false;
             remButton.IsEnabled = false;
+            deleteOrderButton.IsEnabled = false;
 
             //This sets up our window
             this.Width = 1000;
@@ -104,11 +105,12 @@ namespace WpfApp
                 //And enable submitting the order
                 submitButton.IsEnabled = true;
 
+                //Enable deleting the order
+                deleteOrderButton.IsEnabled = true;
+
                 //And set up the viewer to target this order
                 orderViewer.ItemsSource = newOrder.OrderList;
-            }
-
-            
+            }           
         }
 
         //This handles submitting our order
@@ -121,17 +123,22 @@ namespace WpfApp
             Console.WriteLine("Here is the final order:");
             Console.WriteLine(newOrder.FinalOrder);
 
+            //We clear our text boxes
+            Username.Text = "";
+            OrderNumber.Text = "";
+
             //Then we reneable our buttons to make a new order
             createOrder.IsEnabled = true;
             addButton.IsEnabled = false;
             submitButton.IsEnabled = false;
             remButton.IsEnabled = false;
+            deleteOrderButton.IsEnabled = false;
 
             //And let the user know the order has been submitted
             errorMessage.Text = "Order: " + newOrder.OrderNumber + ", successfully submitted by " + newOrder.UserName + "!";
 
-            //And clear the viewer
-            orderViewer.ItemsSource = null;
+            //Then we overwrite the order with a placeholder to clear it
+            newOrder = new Order(1, "PlaceHolder");
         }
 
         //This function handles adding an item to the order
@@ -176,6 +183,9 @@ namespace WpfApp
 
                 //and enable our remove button
                 remButton.IsEnabled = true;
+
+                //And reset the quantity to one
+                Quantity.Text = "1";
             }
         }
 
@@ -216,6 +226,27 @@ namespace WpfApp
             {
                 remButton.IsEnabled = false;
             }
+        }
+
+        //This handles deleting an order entirely
+        private void Delete_Order(object sender, RoutedEventArgs e)
+        {
+            //First we clear our text boxes
+            Username.Text = "";
+            OrderNumber.Text = "";
+
+            //Then we reneable our buttons to make a new order
+            createOrder.IsEnabled = true;
+            addButton.IsEnabled = false;
+            submitButton.IsEnabled = false;
+            remButton.IsEnabled = false;
+            deleteOrderButton.IsEnabled = false;
+
+            //And let the user know the order has been submitted
+            errorMessage.Text = "Order: " + newOrder.OrderNumber + ", has been deleted by " + newOrder.UserName + "!";
+
+            //Then we overwrite the order with a placeholder to clear it
+            newOrder = new Order(1, "PlaceHolder");
         }
     }
 }
