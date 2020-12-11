@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System;
 
 namespace Interfaces.ProcessManagement
 {
@@ -9,6 +10,9 @@ namespace Interfaces.ProcessManagement
         IOrderStep<T> CurrentStep { get; set; }
 
         OrderProcessStatus Status { get; set; }
+
+        DateTime IncidentDate { get; set; }
+        int IncidentNumber { get; set; }
 
     }
 }
