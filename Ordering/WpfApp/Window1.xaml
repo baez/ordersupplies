@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
         Title="My first window for Order" Height="450" Width="800">
+
     <Grid Background="#FFDFE1E4" Margin="0,0,0.333,-315.333">
         <Button Click="Create_Order" Name="createOrder" Margin="55,175,641,0" VerticalAlignment="Top" Content="Create Order" MaxWidth="150" MaxHeight="25" FontWeight="Bold" Background="#FF65D3F7"></Button>
+
 
         <TextBox HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="Username" Margin="164,74,509,0"/>
         <Label Content="Username" HorizontalAlignment="Center" Margin="55,71,675.333,323.667" VerticalAlignment="Top"/>
@@ -15,8 +17,8 @@
         <TextBox HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Margin="184,115,509.333,282.667" Name="OrderNumber" MaxHeight="25" MaxWidth="150" Height="23"/>
 
 
-        <ListBox Margin="381,66,10,0" MaxWidth="400" MaxHeight="100" Name="catalogueViewer" Background="#FFD4D4D4" SelectedIndex="0" VerticalAlignment="Top" Height="107">
-        </ListBox>
+        <DataGrid HorizontalAlignment="Center" Height="104" VerticalAlignment="Top" Width="400" Margin="381,66,0,0" Name="catalogueViewer" />
+
         <Button Name="addButton" Content="Add To Order" MaxWidth="150" MaxHeight="25" Click="addButton_Click" VerticalAlignment="Top" Margin="608,175,46,0" Background="#FF8BD58F" FontFamily="Arial" FontWeight="Bold" Height="24"></Button>
 
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Catalogue" VerticalAlignment="Top" Margin="528,36,158,0" FontSize="22" FontFamily="Arial" FontWeight="Bold"/>
@@ -37,7 +39,6 @@
             </ListView.View>
         </ListView>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Previous Orders" VerticalAlignment="Top" Margin="300,465,361,0" FontSize="16" FontFamily="Arial" FontWeight="Bold" RenderTransformOrigin="-1,6.053" Width="132"/>
-
 
     </Grid>
 </Window>
