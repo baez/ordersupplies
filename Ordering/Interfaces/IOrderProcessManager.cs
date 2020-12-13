@@ -2,10 +2,10 @@
 
 namespace Interfaces.ProcessManagement
 {
-    public interface IOrderProcessManager<T>
+    public interface IOrderProcessManager
     {
-        IList<IOrderProcess<T>> OrderProcesses { get; set; }
+        IList<IOrderProcess> OrderProcesses { get; set; }
 
-        void MoveToNextStep(IOrderProcess<T> orderProcess);
+        void MoveToNextStep(IOrderProcess orderProcess);
     }
 }

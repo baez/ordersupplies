@@ -50,6 +50,7 @@
     <Compile Include="IOrderStep.cs" />
     <Compile Include="OrderItemCategory.cs" />
     <Compile Include="OrderProcessStatus.cs" />
+    <Compile Include="OrderSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

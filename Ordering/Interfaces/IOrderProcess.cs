@@ -3,16 +3,18 @@ using System;
 
 namespace Interfaces.ProcessManagement
 {
-    public interface IOrderProcess<T>
+    public interface IOrderProcess
     {
-        List<IOrderStep<T>> Steps { get; set; }
+        ProcessStep CurrentStep { get; }
 
-        IOrderStep<T> CurrentStep { get; set; }
+        OrderProcessStatus Status { get; }
 
-        OrderProcessStatus Status { get; set; }
+        DateTime IncidentActivationTime { get; }
 
-        DateTime IncidentDate { get; set; }
-        int IncidentNumber { get; set; }
+        int IncidentNumber { get; }
 
+        void Cancel();
+
+        void MoveToNextStep();
     }
 }
