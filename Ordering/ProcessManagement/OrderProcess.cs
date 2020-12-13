@@ -16,6 +16,13 @@ namespace ProcessManagement
         
         public OrderProcess(int incidentNumber)
         {
+            //add 
+            //make it into an array
+            Steps = new ProcessStep[4]()
+                {
+                    
+                }
+
             IncidentNumber = incidentNumber;
             IncidentActivationTime = DateTime.UtcNow;
         }
