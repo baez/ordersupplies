@@ -1,6 +1,7 @@
 ﻿namespace ProcessManagement
 {
-    internal class ProcessStep
+    public class ProcessStep
     {
+
     }
 }
