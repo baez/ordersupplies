@@ -28,7 +28,7 @@ namespace ProcessManagement
         {
             //add 
             //make it into an array
-            Steps = new OrderSteps[4]
+            Steps = new OrderSteps[4]()
                 {
                     
                 }
