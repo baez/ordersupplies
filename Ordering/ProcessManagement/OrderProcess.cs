@@ -20,7 +20,14 @@ namespace ProcessManagement
         {
             //add 
             //make it into an array
+<<<<<<< HEAD
             string[] Steps = {"Create Order", "Approve Order", ""};
+=======
+            //Steps = new ProcessStep[4]()
+            //    {
+                    
+            //    };
+>>>>>>> 9af749b535d670ea9f2149a260d8d3d4924046fe
 
             IncidentNumber = incidentNumber;
             IncidentActivationTime = DateTime.UtcNow;
