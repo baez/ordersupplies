@@ -10,6 +10,8 @@ namespace ProcessManagement
 
         public OrderProcessStatus Status { get; private set;  }
 
+        public object Steps { get; set; }
+
         public DateTime IncidentActivationTime { get; }
         
         public int IncidentNumber { get; }
@@ -18,10 +20,14 @@ namespace ProcessManagement
         {
             //add 
             //make it into an array
-            Steps = new ProcessStep[4]()
-                {
+<<<<<<< HEAD
+            string[] Steps = {"Create Order", "Approve Order", ""};
+=======
+            //Steps = new ProcessStep[4]()
+            //    {
                     
-                }
+            //    };
+>>>>>>> 9af749b535d670ea9f2149a260d8d3d4924046fe
 
             IncidentNumber = incidentNumber;
             IncidentActivationTime = DateTime.UtcNow;
