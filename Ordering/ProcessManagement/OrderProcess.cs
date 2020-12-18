@@ -18,10 +18,10 @@ namespace ProcessManagement
         {
             //add 
             //make it into an array
-            Steps = new ProcessStep[4]()
-                {
+            //Steps = new ProcessStep[4]()
+            //    {
                     
-                }
+            //    };
 
             IncidentNumber = incidentNumber;
             IncidentActivationTime = DateTime.UtcNow;
